@@ -1,4 +1,4 @@
-# Offline Music Player
+# Resona
 
 A modern, feature-rich offline music player built with Tauri v2, Vue 3, and Rust.
 
