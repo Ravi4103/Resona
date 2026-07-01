@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicott/tauri/tauri-v2.0.0/crates/tauri-config-schema/schema.json",
+  "productName": "Reson\u00e1",
+  "version": "0.1.0",
+  "identifier": "com.resona.app",
+  "build": {
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Reson\u00e1",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png", "icons/icon.ico"]
+  }
+}

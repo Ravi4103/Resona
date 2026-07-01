@@ -1,0 +1,35 @@
+{
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main", "mini-player"],
+  "permissions": [
+    "core:default",
+    "core:window:default",
+    "core:window:allow-set-always-on-top",
+    "core:window:allow-set-focus",
+    "core:window:allow-start-dragging",
+    "core:window:allow-close",
+    "core:window:allow-outer-position",
+    "core:window:allow-outer-size",
+    "core:webview:allow-create-webview-window",
+    "core:tray:default",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled",
+    "global-shortcut:allow-register",
+    "global-shortcut:allow-unregister",
+    "global-shortcut:allow-is-registered",
+
+
+    "dialog:default",
+    "dialog:allow-open",
+    "dialog:allow-ask",
+    "dialog:allow-confirm",
+    "fs:default",
+    "fs:allow-read",
+    "fs:allow-exists",
+    "fs:allow-stat",
+    "shell:default",
+    "shell:allow-open"
+  ]
+}

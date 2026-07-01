@@ -1,0 +1,43 @@
+{
+  "name": "resona-player",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@radix-icons/vue": "1.0.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-autostart": "^2.5.1",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tauri-apps/plugin-fs": "^2",
+    "@tauri-apps/plugin-shell": "^2",
+    "@tauri-apps/plugin-window": "2.0.0-alpha.1",
+    "lucide-vue-next": "1.0.0",
+    "ogl": "^1.0.11",
+    "pinia": "^3",
+    "radix-vue": "1.9.17",
+    "vue": "^3",
+    "vue-i18n": "^11.4.6",
+    "vue-router": "^4",
+    "vue-virtual-scroller": "3.0.3",
+    "vue-virtual-sortable": "3.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@tauri-apps/cli": "^2",
+    "@vitejs/plugin-vue": "^5",
+    "@vue/test-utils": "^2.4.11",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^6",
+    "vitest": "^4.1.9",
+    "vue-tsc": "^2"
+  }
+}

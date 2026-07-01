@@ -1,0 +1,62 @@
+{
+  "common": {
+    "search": "Search",
+    "settings": "Settings",
+    "play": "Play",
+    "pause": "Pause",
+    "next": "Next",
+    "previous": "Previous",
+    "shuffle": "Shuffle",
+    "repeat": "Repeat",
+    "volume": "Volume",
+    "mute": "Mute",
+    "queue": "Queue",
+    "lyrics": "Lyrics",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "player": {
+    "now_playing": "Now Playing",
+    "not_playing": "Not Playing",
+    "up_next": "Up Next",
+    "repeat_off": "Repeat Off",
+    "repeat_all": "Repeat All",
+    "repeat_one": "Repeat One",
+    "shuffle_on": "Shuffle On",
+    "shuffle_off": "Shuffle Off"
+  },
+  "library": {
+    "albums": "Albums",
+    "artists": "Artists",
+    "tracks": "Tracks",
+    "genres": "Genres",
+    "composers": "Composers",
+    "playlists": "Playlists",
+    "favorites": "Favorites"
+  },
+  "settings": {
+    "general": "General",
+    "library": "Library",
+    "playback": "Playback",
+    "about": "About",
+    "theme": "Theme",
+    "language": "Language",
+    "start_at_login": "Start at Login",
+    "show_tray_icon": "Show Tray Icon",
+    "prevent_sleep": "Prevent Sleep While Playing",
+    "update_available": "Update Available"
+  },
+  "app": {
+    "update_now": "Update Now",
+    "updating": "Updating...",
+    "restart_now": "Restart Now",
+    "later": "Later"
+  }
+}
