@@ -5,7 +5,6 @@ import LazyImg from '../LazyImg.vue'
 import { usePlayerStore } from '../../stores/player'
 import { formatTime } from '../../lib/utils'
 import MarqueeText from '../MarqueeText.vue'
-import { openMiniWindow } from '../../composables/useMiniPlayerWindow'
 
 const store = usePlayerStore()
 
@@ -65,7 +64,7 @@ const trackArtist = computed(() => store.currentTrack?.artist || '')
       </span>
       <button
         class="text-foreground/60 hover:text-foreground/90 transition-colors"
-        @click="openMiniWindow"
+        @click="store.playerMode = 'fullscreen'"
       >
         <Maximize class="w-4 h-4" />
       </button>

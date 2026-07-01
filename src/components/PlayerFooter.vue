@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { Play, Pause, SkipBack, SkipForward, Repeat, Repeat1, Shuffle, Maximize, Music, ListMusic, Mic2, PictureInPicture2, Volume2, VolumeX } from 'lucide-vue-next'
 import { usePlayerStore } from '../stores/player'
 import { useAppStore } from '../stores/app'
 import { formatTime } from '../lib/utils'
@@ -8,7 +6,7 @@ import PlayerControlButton from './player/PlayerControlButton.vue'
 import MarqueeText from './MarqueeText.vue'
 import TrackContextMenu from './TrackContextMenu.vue'
 import Slider from './Slider.vue'
-
+import { enterMiniMode, exitMiniMode } from '../composables/useInAppMiniMode'
 
 const store = usePlayerStore()
 const appStore = useAppStore()
@@ -42,6 +40,16 @@ function onSeekStart() {
 async function onSeekEnd() {
   await store.seek((seekValue.value / 100) * store.duration)
   isSeeking.value = false
+}
+
+async function onMiniToggle() {
+  if (store.playerMode === 'mini') {
+    store.playerMode = 'sticky'
+    try { await exitMiniMode() } catch (e) { console.warn('exitMiniMode failed', e) }
+  } else {
+    store.playerMode = 'mini'
+    try { await enterMiniMode(360, 88, false) } catch (e) { console.warn('enterMiniMode failed', e) }
+  }
 }
 </script>
 
@@ -77,18 +85,6 @@ async function onSeekEnd() {
         >
           <Shuffle class="w-4 h-4" />
         </PlayerControlButton>
-        <button class="text-foreground opacity-50 hover:text-foreground transition-colors" @click="store.previous()">
-          <SkipBack class="w-5 h-5 fill-current" />
-        </button>
-        <button
-          class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:scale-105 transition-transform"
-          @click="store.togglePlayPause()">
-          <Pause v-if="store.isPlaying" class="w-4 h-4 fill-current text-primary-foreground" />
-          <Play v-else class="w-4 h-4 fill-current text-primary-foreground ml-0.5" />
-        </button>
-        <button class="text-foreground opacity-50 hover:text-foreground transition-colors" @click="store.next()">
-          <SkipForward class="w-5 h-5 fill-current" />
-        </button>
         <PlayerControlButton
           class="transition-colors"
           :class="repeatActive ? 'text-primary' : 'text-foreground opacity-60 hover:text-foreground opacity-50'"
@@ -135,7 +131,7 @@ async function onSeekEnd() {
         <ListMusic class="w-4 h-4" />
       </button>
       <button class="text-foreground opacity-60 hover:text-foreground opacity-50 transition-colors"
-        @click="store.toggleMiniWindow()">
+        @click="onMiniToggle()">
         <PictureInPicture2 class="w-4 h-4" />
       </button>
       <button class="text-foreground opacity-60 hover:text-foreground opacity-50 transition-colors"
